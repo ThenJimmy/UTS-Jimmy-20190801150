@@ -1,0 +1,8 @@
+#Membuat one way hash password menggunakan openssl
+openssl passwd -6 Rahasia123
+
+#Membuat public private key menggunakan openssl
+#Membuat Private Key
+openssl genrsa -aes256 -passout pass:Rahasia123 -out private.key 2048
+#Membuat Public Key dari private key
+openssl rsa -in private.key -passin pass:Rahasia123 -pubout -out public.key
